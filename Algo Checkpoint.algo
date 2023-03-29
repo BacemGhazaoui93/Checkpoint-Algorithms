@@ -2,49 +2,32 @@
 
 ALGORITHM algorith_checkpoint
 VAR
-     sentence:"";
-     // Check if the sentence is valid
-     valid: FALSE; 
+    c : CHAR := '';
     // let n be the number of caracters in the sentence
-     n:=0;
+     n: INTEGER:=0;
      // let i be the number of words in the sentence
-     i:=0;
+     i:INTEGER:=0;
      // let v be the number of vowels in the sentence
-     v:=0;
+     v:INTEGER:=0;
 
 BEGIN
-    write(please write a sentence)
-    read (s)
 
-    IF (last character of s = ".") THEN
-        valid: TRUE;
-
-          IF (caracter is an alphabet) THEN
-            n:=n+1;
-                IF (caracter is a vowel) THEN
+      WHILE (c <> '.') DO
+        Read (c);
+        n:=n+1;
+        IF (c = 'a' OR c='e' OR c='i' OR c='o' OR c='u' OR c='y') THEN
                 v:=v+1;
-                ELSE
-                v:=v
-                END_IF
-          ELSE_IF (carcater is ' ') THEN
-            i:=i+1
-          ELSE //caracter is a point
-            i:=i+1; BREAK;
-          END_IF
-        
+        END_IF
+        IF (c=' ') THEN
+            i:=i+1;
+        END_IF
+      END_WHILE
+          i:=i+1;
 
-
-    ELSE
-        valid: FALSE;
-        write(please write a sentence that ens with a point)
-    END_IF    
+    Write("The length of the sentence is ",n);
+    Write("The number of words in the sentence is ",i);
+    Write("he number of vowels in the sentence. is ",v);
 
 
 END
-
-
-
-
-
-
 
