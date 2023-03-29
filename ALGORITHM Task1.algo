@@ -1,0 +1,19 @@
+ALGORITHM Task1-Algo
+VAR
+    x: INTEGER;
+    y: INTEGER;
+    z: INTEGER;
+    n :INTEGER;
+BEGIN
+    Read(x); 
+    Read(y); 
+    Read(z); 
+    n:=x;
+    x:=y;
+    y:=z;
+    z:=n;
+
+    Write(x);
+    Write(y);
+    Write(z);
+END

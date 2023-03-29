@@ -1,0 +1,51 @@
+ALGORITHM Task2-Algo
+
+VAR
+    r1: FLOAT :=0.7;
+    r2: FLOAT :=0.4;
+    r3 :FLOAT :=0.2;
+    p_d:INTEGER:=100;
+    vat:FLOAT := 0.18;
+    tax1:FLOAT;
+    tax2:FLOAT;
+    ins:FLOAT:= 0.3;
+    c1 : FLOAT; // c1 Will be the total cost of the rental by KM
+    c2 : FLOAT; // c2 Will be the total cost of the rental by day
+    k : FLOAT;  // k will be the number of kilometers
+    d : FLOAT ; // d will be the number of days
+
+BEGIN
+    Write ("Total mileage :") ;
+    read (k);
+    Write ("Days of rental :");
+    read (d);
+
+IF (k>=0 AND k<=100) THEN
+    C1:=C1*r1;
+    tax1:=c1*vat;
+    C1:=C1+tax1+d*ins;
+END_IF
+IF (k>=101 AND k<=1000) THEN
+    C1:=C1*r2;
+    tax1:=c1*vat;
+    C1:=C1+tax1+d*ins;
+END_IF
+IF (k>=1001) THEN
+    C1:=C1*r3;
+    tax1:=c1*vat;
+    C1:=C1+tax1+d*ins;
+END_IF
+
+    C2:=p_d*d;
+    tax2:=c2*vat;
+    C2:=C2+tax2+d*ins;
+
+      Write("Cost of rental by Kilometers",c1 )
+      IF (c1<c2) THEN
+        Write("Most suitable solution")
+      END_IF
+      Write("Cost of rental by Kilometers",c2 )
+      IF (c2<c1) THEN
+        Write("Most suitable solution")
+      END_IF
+END
