@@ -1,0 +1,36 @@
+
+
+ALGORITHM algorith_checkpoint
+VAR
+     sentence:"";
+     // Check if the sentence is valid
+     valid: FALSE; 
+    // let n be the number of caracters in the sentence
+     n:=0;
+     // let i be the number of words in the sentence
+     i:=0;
+     // let v be the number of vowels in the sentence
+     v:=0;
+
+BEGIN
+    write(please write a sentence)
+    read (s)
+
+    IF (last character of s = ".") THEN
+        valid: TRUE;
+
+        
+    ELSE
+        valid: FALSE;
+        write(please write a sentence that ens with a point)
+    END_IF    
+
+
+END
+
+
+
+
+
+
+
