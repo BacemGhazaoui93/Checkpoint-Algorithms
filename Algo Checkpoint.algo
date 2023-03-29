@@ -19,7 +19,21 @@ BEGIN
     IF (last character of s = ".") THEN
         valid: TRUE;
 
+          IF (caracter is an alphabet) THEN
+            n:=n+1;
+                IF (caracter is a vowel) THEN
+                v:=v+1;
+                ELSE
+                v:=v
+                END_IF
+          ELSE_IF (carcater is ' ') THEN
+            i:=i+1
+          ELSE //caracter is a point
+            i:=i+1; BREAK;
+          END_IF
         
+
+
     ELSE
         valid: FALSE;
         write(please write a sentence that ens with a point)
