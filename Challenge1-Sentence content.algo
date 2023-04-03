@@ -1,0 +1,71 @@
+FUNCTION is_seperator(d:character) : BOOLEAN
+VAR
+s: BOOLEAN := FALSE ;
+BEGIN
+    IF (d:=' ') THEN
+        s:= TRUE;
+    END_IF
+    RETURN TRUE ;
+END
+
+FUNCTION is_letter(d:character) : BOOLEAN
+VAR
+l: BOOLEAN := FALSE ;
+BEGIN
+    IF (d:>= 'A' AND character <= 'Z' OR d:>= 'a' AND character <= 'z' )THEN
+        l:= TRUE;
+    END_IF
+    RETURN TRUE ;
+END
+
+FUNCTION is_digit(d:character) : BOOLEAN
+VAR
+n: BOOLEAN := FALSE ;
+BEGIN
+    IF (d:>= '0' AND character <= '9')THEN
+        n:= TRUE;
+    END_IF
+    RETURN TRUE ;
+END
+
+
+
+
+ALGORITHM sentence_content
+VAR
+    c : CHAR := '';
+    // let n_l be the number of letters in the sentence
+     n_l: INTEGER:=0;
+     // let in_s be the number of seperators in the sentence
+     n_s:INTEGER:=0;
+     // let n_d be the number of digits in the sentence
+     n_d:INTEGER:=0;
+     // let n_sp be the number of special character in the sentence
+     n_sp:INTEGER:=0;
+
+BEGIN
+
+      WHILE (c <> '#') DO
+        Read (c);
+        IF (is_seperator(c):= FALSE AND is_letter(c):= FALSE AND is_digit(c):= FALSE) THEN
+            n_sp:=n_sp+1; BREAK
+        END_IF
+        IF (is_seperator(c):= TRUE) THEN
+            n_s:=n_s+1; BREAK 
+        END_IF
+        IF (is_letter(c):= TRUE) THEN
+            n_l:=n_l+1; BREAK 
+        END_IF
+        IF (is_digit(c):= TRUE) THEN
+            n_d:=n_d+1; BREAK 
+        END_IF
+        
+      END_WHILE
+          
+
+    Write("The number of seperators in the sentence is ",n_s);
+    Write("The number of letters in the sentence is ",n_l);
+    Write("The number of digits in the sentence is ",n_d);
+    Write("The number of special characters in the sentence is ",n_sp);
+
+END
